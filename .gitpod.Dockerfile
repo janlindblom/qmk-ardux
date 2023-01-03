@@ -1,6 +1,6 @@
 FROM debian:11-slim
 
-RUN sudo apt-get update && sudo apt-get install -y \
+RUN apt-get update && apt-get install -y \
     avr-libc \
     avrdude \
     binutils-arm-none-eabi \
@@ -29,10 +29,10 @@ RUN sudo apt-get update && sudo apt-get install -y \
     tar \
     wget \
     zip \
-    && sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean
+    && rm -rf /var/lib/apt/lists/* && apt-get clean
 
 # Install python packages
-RUN sudo python3 -m pip install --upgrade pip setuptools wheel
+RUN python3 -m pip install --upgrade pip setuptools wheel
 RUN python3 -m pip install nose2 yapf qmk
 
 # Set the default location for qmk_firmware
