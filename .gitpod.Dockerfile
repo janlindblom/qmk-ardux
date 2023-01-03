@@ -29,7 +29,7 @@ RUN sudo apt-get update && sudo apt-get install -y \
     tar \
     wget \
     zip \
-    && rm -rf /var/lib/apt/lists/* && apt-get clean
+    && sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean
 
 # Install python packages
 RUN sudo python3 -m pip install --upgrade pip setuptools wheel
