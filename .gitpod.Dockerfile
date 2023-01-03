@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full
+FROM debian:11-slim
 
 RUN sudo apt-get update && sudo apt-get install -y \
     avr-libc \
