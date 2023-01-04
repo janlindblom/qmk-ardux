@@ -9,6 +9,10 @@
 #include "layout/pimoroni.h"
 #endif
 
+#ifdef OLED_ENABLE
+#    include "oled/oled.h"
+#endif
+
 // /////////
 // User remixes / tweaks -- these take precidence above all else
 #if __has_include("layout/remixes/remix_functions.h")
@@ -95,5 +99,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         default:
             break;
     }
+#ifdef OLED_ENABLE
+    process_record_user_oled(keycode, record);
+#endif
     return true;
 }
